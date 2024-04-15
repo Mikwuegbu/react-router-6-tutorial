@@ -35,21 +35,21 @@ npm install react-router-dom@6
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<div>home page</div>} />
-        <Route
-          path='testing'
-          element={
-            <div>
-              <h2>testing </h2>
-            </div>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<div>home page</div>} />
+				<Route
+					path="testing"
+					element={
+						<div>
+							<h2>testing </h2>
+						</div>
+					}
+				/>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
@@ -66,15 +66,15 @@ import About from './pages/About';
 import Products from './pages/Products';
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='products' element={<Products />} />
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="products" element={<Products />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
@@ -107,16 +107,16 @@ export default Home;
 
 ```js
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='products' element={<Products />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="products" element={<Products />} />
+				<Route path="*" element={<Error />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 ```
 
@@ -126,13 +126,13 @@ function App() {
 import { Link } from 'react-router-dom';
 
 const Error = () => {
-  return (
-    <section className='section'>
-      <h2>404</h2>
-      <p>page not found</p>
-      <Link to='/'>back home</Link>
-    </section>
-  );
+	return (
+		<section className="section">
+			<h2>404</h2>
+			<p>page not found</p>
+			<Link to="/">back home</Link>
+		</section>
+	);
 };
 export default Error;
 ```
@@ -145,17 +145,17 @@ export default Error;
 
 ```js
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />}>
-          <Route path='about' element={<About />} />
-          <Route path='products' element={<Products />} />
-          <Route path='*' element={<Error />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />}>
+					<Route path="about" element={<About />} />
+					<Route path="products" element={<Products />} />
+					<Route path="*" element={<Error />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 ```
 
@@ -167,12 +167,12 @@ function App() {
 import { Link, Outlet } from 'react-router-dom';
 
 const Home = () => {
-  return (
-    <section className='section'>
-      <h2>Home Page</h2>
-      <Outlet />
-    </section>
-  );
+	return (
+		<section className="section">
+			<h2>Home Page</h2>
+			<Outlet />
+		</section>
+	);
 };
 export default Home;
 ```
@@ -185,13 +185,13 @@ export default Home;
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-    <nav className='navbar'>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/products'>Products</Link>
-    </nav>
-  );
+	return (
+		<nav className="navbar">
+			<Link to="/">Home</Link>
+			<Link to="/about">About</Link>
+			<Link to="/products">Products</Link>
+		</nav>
+	);
 };
 export default Navbar;
 ```
@@ -202,14 +202,14 @@ export default Navbar;
 import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 const Home = () => {
-  return (
-    <>
-      <Navbar />
-      <section className='section'>
-        <Outlet />
-      </section>
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<section className="section">
+				<Outlet />
+			</section>
+		</>
+	);
 };
 export default Home;
 ```
@@ -228,14 +228,14 @@ export default Home;
 import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 const SharedLayout = () => {
-  return (
-    <>
-      <Navbar />
-      <section className='section'>
-        <Outlet />
-      </section>
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<section className="section">
+				<Outlet />
+			</section>
+		</>
+	);
 };
 export default SharedLayout;
 ```
@@ -244,11 +244,11 @@ export default SharedLayout;
 
 ```js
 const Home = () => {
-  return (
-    <section className='section'>
-      <h2>Home Page</h2>
-    </section>
-  );
+	return (
+		<section className="section">
+			<h2>Home Page</h2>
+		</section>
+	);
 };
 export default Home;
 ```
@@ -257,18 +257,18 @@ export default Home;
 
 ```js
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='products' element={<Products />} />
-          <Route path='*' element={<Error />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<SharedLayout />}>
+					<Route index element={<Home />} />
+					<Route path="about" element={<About />} />
+					<Route path="products" element={<Products />} />
+					<Route path="*" element={<Error />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 ```
 
@@ -279,15 +279,15 @@ function App() {
 ```js
 import { NavLink } from 'react-router-dom';
 
-<nav className='navbar'>
-  <NavLink
-    to='/about'
-    style={({ isActive }) => {
-      return { color: isActive ? 'red' : 'grey' };
-    }}
-  >
-    Home
-  </NavLink>
+<nav className="navbar">
+	<NavLink
+		to="/about"
+		style={({ isActive }) => {
+			return { color: isActive ? 'red' : 'grey' };
+		}}
+	>
+		Home
+	</NavLink>
 </nav>;
 ```
 
@@ -296,13 +296,13 @@ import { NavLink } from 'react-router-dom';
 - StyledNavbar.js
 
 ```js
-<nav className='navbar'>
-  <NavLink
-    to='/'
-    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-  >
-    Home
-  </NavLink>
+<nav className="navbar">
+	<NavLink
+		to="/"
+		className={({ isActive }) => (isActive ? 'link active' : 'link')}
+	>
+		Home
+	</NavLink>
 </nav>
 ```
 
@@ -312,19 +312,19 @@ import { NavLink } from 'react-router-dom';
 
 ```js
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='products' element={<Products />} />
-          <Route path='products/:productId' element={<SingleProduct />} />
-          <Route path='*' element={<Error />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<SharedLayout />}>
+					<Route index element={<Home />} />
+					<Route path="about" element={<About />} />
+					<Route path="products" element={<Products />} />
+					<Route path="products/:productId" element={<SingleProduct />} />
+					<Route path="*" element={<Error />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 ```
 
@@ -336,14 +336,14 @@ function App() {
 import { Link, useParams } from 'react-router-dom';
 import products from '../data';
 const SingleProduct = () => {
-  const { productId } = useParams();
+	const { productId } = useParams();
 
-  return (
-    <section className='section product'>
-      <h2>{productId}</h2>
-      <Link to='/products'>back to products</Link>
-    </section>
-  );
+	return (
+		<section className="section product">
+			<h2>{productId}</h2>
+			<Link to="/products">back to products</Link>
+		</section>
+	);
 };
 
 export default SingleProduct;
@@ -357,21 +357,21 @@ export default SingleProduct;
 import { Link } from 'react-router-dom';
 import products from '../data';
 const Products = () => {
-  return (
-    <section className='section'>
-      <h2>products</h2>
-      <div className='products'>
-        {products.map((product) => {
-          return (
-            <article key={product.id}>
-              <h5>{product.name}</h5>
-              <Link to={`/products/${product.id}`}>more info</Link>
-            </article>
-          );
-        })}
-      </div>
-    </section>
-  );
+	return (
+		<section className="section">
+			<h2>products</h2>
+			<div className="products">
+				{products.map((product) => {
+					return (
+						<article key={product.id}>
+							<h5>{product.name}</h5>
+							<Link to={`/products/${product.id}`}>more info</Link>
+						</article>
+					);
+				})}
+			</div>
+		</section>
+	);
 };
 
 export default Products;
@@ -385,17 +385,17 @@ export default Products;
 import { Link, useParams } from 'react-router-dom';
 import products from '../data';
 const SingleProduct = () => {
-  const { productId } = useParams();
-  const product = products.find((product) => product.id === productId);
-  const { image, name } = product;
+	const { productId } = useParams();
+	const product = products.find((product) => product.id === productId);
+	const { image, name } = product;
 
-  return (
-    <section className='section product'>
-      <img src={image} alt={name} />
-      <h5>{name}</h5>
-      <Link to='/products'>back to products</Link>
-    </section>
-  );
+	return (
+		<section className="section product">
+			<img src={image} alt={name} />
+			<h5>{name}</h5>
+			<Link to="/products">back to products</Link>
+		</section>
+	);
 };
 
 export default SingleProduct;
@@ -409,23 +409,23 @@ export default SingleProduct;
 
 ```js
 function App() {
-  const [user, setUser] = useState(null);
+	const [user, setUser] = useState(null);
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='products' element={<Products />} />
-          <Route path='products/:productId' element={<SingleProduct />} />
-          <Route path='login' element={<Login setUser={setUser} />} />
-          <Route path='dashboard' element={<Dashboard user={user} />} />
-          <Route path='*' element={<Error />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<SharedLayout />}>
+					<Route index element={<Home />} />
+					<Route path="about" element={<About />} />
+					<Route path="products" element={<Products />} />
+					<Route path="products/:productId" element={<SingleProduct />} />
+					<Route path="login" element={<Login setUser={setUser} />} />
+					<Route path="dashboard" element={<Dashboard user={user} />} />
+					<Route path="*" element={<Error />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 ```
 
@@ -455,11 +455,11 @@ const Login = ({ setUser }) => {
 
 ```js
 const Dashboard = ({ user }) => {
-  return (
-    <section className='section'>
-      <h4>Hello, {user?.name}</h4>
-    </section>
-  );
+	return (
+		<section className="section">
+			<h4>Hello, {user?.name}</h4>
+		</section>
+	);
 };
 export default Dashboard;
 ```
@@ -470,12 +470,12 @@ export default Dashboard;
 
 ```js
 <Route
-  path='dashboard'
-  element={
-    <ProtectedRoute user={user}>
-      <Dashboard user={user} />
-    </ProtectedRoute>
-  }
+	path="dashboard"
+	element={
+		<ProtectedRoute user={user}>
+			<Dashboard user={user} />
+		</ProtectedRoute>
+	}
 />
 ```
 
@@ -485,10 +485,10 @@ export default Dashboard;
 import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ children, user }) => {
-  if (!user) {
-    return <Navigate to='/' />;
-  }
-  return children;
+	if (!user) {
+		return <Navigate to="/" />;
+	}
+	return children;
 };
 
 export default ProtectedRoute;
